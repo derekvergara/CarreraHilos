@@ -141,6 +141,11 @@ public class PistaCarreras extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Pausar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 140, 40));
 
         pack();
@@ -211,6 +216,20 @@ public class PistaCarreras extends javax.swing.JFrame {
         ca2.start();
         ca3.start();
     }//GEN-LAST:event_btnIniciarMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        lblCarro1.setLocation(0, lblCarro1.getLocation().y);
+        lblCarro2.setLocation(0, lblCarro2.getLocation().y);
+        lblCarro3.setLocation(0, lblCarro3.getLocation().y);
+
+        ProcesoCarritos ca1 = new ProcesoCarritos(lblCarro1, this);
+        ProcesoCarritos ca2 = new ProcesoCarritos(lblCarro2, this);
+        ProcesoCarritos ca3 = new ProcesoCarritos(lblCarro3, this);
+
+        ca1.pausarcarrera();
+        ca2.pausarcarrera();
+        ca3.pausarcarrera();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
             /**
              * @param args the command line arguments

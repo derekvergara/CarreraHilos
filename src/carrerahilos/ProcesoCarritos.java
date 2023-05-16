@@ -9,7 +9,7 @@ public class ProcesoCarritos extends Thread {
     private JLabel etiqueta;
     private PistaCarreras auto;
     private PistaCarreras puesto;
-    
+    private boolean pausar;
 
     int miliseg = 0;
     int seg = 0;
@@ -19,14 +19,31 @@ public class ProcesoCarritos extends Thread {
     public ProcesoCarritos(JLabel etiqueta, PistaCarreras auto) {
         this.etiqueta = etiqueta;
         this.auto = auto;
-
     }
 
-    public ProcesoCarritos(PistaCarreras puesto) {
+    public ProcesoCarritos(PistaCarreras puesto, boolean pausar) {
         this.puesto = puesto;
+        this.pausar = pausar;
     }
 
     public ProcesoCarritos() {
+    }
+
+    public boolean isPausar() {
+        return pausar;
+    }
+
+    public void setPausar(boolean pausado) {
+        this.pausar = pausado;
+    }
+
+    public synchronized void pausarcarrera() {
+        setPausar(true);
+    }
+
+    public synchronized void reanudarcarrera() {
+        setPausar(false);
+        notify();
     }
 
     //boolean inicio = true;
@@ -38,6 +55,14 @@ public class ProcesoCarritos extends Thread {
         int auto3 = 0;
         while (true) {
             try {
+                synchronized (this) {
+
+                    if (pausar) {
+
+                        wait();
+                    }
+
+                }
                 Thread.sleep((int) (Math.random() * 250));
 //                sleep((int) Math.random() * 1000);
                 auto1 = auto.getLblCarro1().getLocation().x;
@@ -85,4 +110,5 @@ public class ProcesoCarritos extends Thread {
 
         }
     }
+
 }
