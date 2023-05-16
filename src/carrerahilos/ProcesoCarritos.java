@@ -9,6 +9,7 @@ public class ProcesoCarritos extends Thread {
     private JLabel etiqueta;
     private PistaCarreras auto;
     private PistaCarreras puesto;
+    
 
     int miliseg = 0;
     int seg = 0;

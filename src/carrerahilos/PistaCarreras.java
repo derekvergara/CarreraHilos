@@ -77,6 +77,7 @@ public class PistaCarreras extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         txtTiempo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -120,7 +121,7 @@ public class PistaCarreras extends javax.swing.JFrame {
                 btnIniciarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 130, 40));
+        getContentPane().add(btnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, 130, 40));
 
         btnSalir.setBackground(new java.awt.Color(153, 153, 153));
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -136,6 +137,11 @@ public class PistaCarreras extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Tiempo:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setText("Pausar");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 140, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -244,6 +250,7 @@ public class PistaCarreras extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
